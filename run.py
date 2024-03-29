@@ -3,6 +3,18 @@
 import random
 from words import words
 
+# Function to choose a random word from the words.py list
+def choose_word(words):
+    """
+    Choose a random word from the 'words.py' file
+    skid the invalid words (hypen or space)
+    return the word
+    """
+    word = random.choice(words)
+    while '-' or ' ' in word:
+        word = random.choice(words)
+    return word
+
 # Function to display the hangman
 def display_hangman(lives):
     stages = [  
@@ -75,16 +87,14 @@ def display_hangman(lives):
     else:
         return stages[-1]  # Return the last stage if lives exceed the length of stages
 
-def choose_word(words):
-    """
-    Choose a random word from the 'words.py' file
-    skid the invalid words (hypen or space)
-    return the word
-    """
-    word = random.choice(words)
-    while '-' or ' ' in word:
-        word = random.choice(words)
-    return word
+# Function to check if the guessed letter is in the word
+
+# Function to display the word with blanks and guessed letters
+
+# Function to check if the guessed word matches the chosen word
+
+
+# Function to play the hangman game
 
 def hangman():
     word = choose_word(words)

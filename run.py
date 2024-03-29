@@ -3,5 +3,13 @@
 import random
 from words import words
 
-
-print(words)
+def choose_word(words):
+    """
+    Choose a random word from the 'words.py' file
+    skid the invalid words (hypen or space)
+    return the word
+    """
+    word = random.choice(words)
+    while '-' or ' ' in word:
+        word = random.choice(words)
+    return word

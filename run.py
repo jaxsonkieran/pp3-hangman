@@ -3,6 +3,78 @@
 import random
 from words import words
 
+# Function to display the hangman
+def display_hangman(lives):
+    stages = [  
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / \\
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / 
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |     \\|
+                   |      |
+                   |     
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                ''',
+                '''
+                   --------
+                   |      
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                '''
+    ]
+    if lives < len(stages):
+        return stages[lives]
+    else:
+        return stages[-1]  # Return the last stage if lives exceed the length of stages
+
 def choose_word(words):
     """
     Choose a random word from the 'words.py' file

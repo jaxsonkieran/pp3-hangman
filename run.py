@@ -163,7 +163,7 @@ def hangman():
                 game_over = True
 
     # Ask if the user wants to play again
-    play_again = input("Do you want to play again? (Yes/No): ").upper()
+    play_again = input("Do you want to play again? (Yes/No): ").lower()
     if play_again == "yes":
         hangman()
     else:

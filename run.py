@@ -4,6 +4,20 @@ import random
 from words import words
 from time import sleep
 
+# Function that get's player name
+def user_name():
+    """
+    Asks player to enter their name. 
+    """
+    global name
+    while True:
+        name = input("\n Enter your player name: ")
+        if name.isalpha():
+            break
+        print("Please insert only valid letters (A-Z).")
+    sleep(1)
+    print("\nGoodluck, " + f"{name.capitalize()}!")
+
 # Function to choose a random word from the words.py list
 # This function was really helped by the json file from Kylie Ying in her YT tutorial
 def choose_word(words):
@@ -110,9 +124,7 @@ def display_word(word, guessed_letters, incorrect_guesses):
 def hangman():
 
     user_welcome()
-    # Ask the user to enter their name
-    name = input("Enter your name: ")
-    print(f"Welcome {name}! Let's get ready to play!\n")
+    user_name()
 
     # Difficulty selection
     print("Choose your difficulty!\n")
@@ -166,7 +178,7 @@ def hangman():
             if ''.join(guessed_letters) == word:
                 print(display_hangman(lives))
                 print(display_word(word, guessed_letters, incorrect_guesses)) 
-                print("Congratulations. You've guessed the word correctly!")
+                print(f"Congratulations {name.capitalize()}!. You've guessed the word correctly!")
                 game_over = True
 
         else:
@@ -176,7 +188,8 @@ def hangman():
             print(f"You have {lives} lives remaining.")
             # Check if the player has run out of lives
             if lives == 0:
-                print("You're out of lives! The word was: ", word)
+                print(f"You're out of lives, {name.capitalize()}!")
+                print("The word was, ", word)
                 game_over = True
 
     # Ask if the user wants to play again

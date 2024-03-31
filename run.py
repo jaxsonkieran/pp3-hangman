@@ -4,6 +4,7 @@ import random
 from words import words
 from time import sleep
 
+
 # Function that get's player name
 def user_name():
     """
@@ -168,7 +169,7 @@ def hangman():
         print(display_word(word, guessed_letters, incorrect_guesses))
 
         # Prompt the user to guess a letter
-        guess = input("Guess a letter: ").upper()
+        guess = input("Guess a letter: ").lower()
         
         # Validate the user's input
         if len(guess) != 1 or not guess.isalpha():
@@ -183,7 +184,7 @@ def hangman():
         # Check if the guessed letter is in the word
         if guess in word:
             guessed_letters.append(guess)
-            if ''.join(guessed_letters) == word:
+            if all(letter in guessed_letters for letter in word):
                 print(display_hangman(lives))
                 print(display_word(word, guessed_letters, incorrect_guesses)) 
                 print(f"Congratulations {name.capitalize()}!. You've guessed the word correctly!")

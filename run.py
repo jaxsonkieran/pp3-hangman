@@ -8,11 +8,11 @@ from words import words
 def choose_word(words):
     """
     Choose a random word from the 'words.py' file
-    skid the invalid words (hypen or space)
+    skip the invalid words (hyphen or space)
     return the word
     """
     word = random.choice(words)
-    while '-' or ' ' in word:
+    while '-' in word or ' ' in word:
         word = random.choice(words)
     return word
 
@@ -106,7 +106,6 @@ def display_word(word, guessed_letters, incorrect_guesses):
 
 
 # Function to play the hangman game
-
 def hangman():
     # Ask the user to enter their name
     name = input("Enter your name: ")

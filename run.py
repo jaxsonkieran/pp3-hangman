@@ -19,6 +19,7 @@ def user_name():
     print("\nGoodluck, " + f"{name.capitalize()}!")
 
 # Function to choose a random word from the words.py list
+
 # This function was really helped by the json file from Kylie Ying in her YT tutorial
 def choose_word(words):
     """
@@ -118,6 +119,13 @@ def display_word(word, guessed_letters, incorrect_guesses):
     return displayed_word
 
 # Function to check if the guessed word matches the chosen word
+def check_guess_word(word, guessed_word):
+    if guessed_word == word:
+        return True
+    else:
+        return False
+
+
 
 
 # Function to play the hangman game

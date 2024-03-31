@@ -107,24 +107,16 @@ def display_word(word, guessed_letters, incorrect_guesses):
 # Function to play the hangman game
 
 def hangman():
+
+    name = input("Enter your name: ")
+    print(f"Welcome {name}! Let's get ready to play hangman :)")
+    
     word = choose_word(words)
-    word_letters = set(word) # keeping track of whats already been guessed in the word
+    # keeping track of whats already been guessed in the word
+    word_letters = set(word) 
     alphabet = set(string.ascii_uppercase)
-    letters_guessed = set() # what the user guesses
-    
-#     # getting user input
-#     user_guess = input("Guess a letter: ").upper()
-#     if user_guess in alphabet - letters_guessed:
-#         letters_guessed.add(user_guess)
-#         if user_guess in word_letters:
-#             word_letters.remove(user_guess)
-
-#     elif user_guess in letters_guessed:
-#         print("You've already guessed this letter. Please try again.")
-    
-#     else:
-#         print("Error. Please type in a valid letter.")
-
-# user_input = input("Please type in a letter: ")
-# print(user_input)
+    # what the user guesses
+    letters_guessed = set() 
+    # Defaulting lives to 8 for now just for testing
+    lives = 8 
     

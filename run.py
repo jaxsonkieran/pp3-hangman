@@ -139,7 +139,7 @@ def hangman():
             continue
 
         # Check if the guessed letter has already been guessed
-        if guess in guessed_letters:
+        if guess in guessed_letters or guess in incorrect_guesses:
             print("You already guessed this letter.")
             continue
 

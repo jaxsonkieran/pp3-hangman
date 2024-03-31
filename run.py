@@ -4,6 +4,7 @@ import random
 from words import words
 
 # Function to choose a random word from the words.py list
+# This function was really helped by the json file from Kylie Ying in her YT tutorial
 def choose_word(words):
     """
     Choose a random word from the 'words.py' file
@@ -107,16 +108,67 @@ def display_word(word, guessed_letters, incorrect_guesses):
 # Function to play the hangman game
 
 def hangman():
-
+    # Ask the user to enter their name
     name = input("Enter your name: ")
     print(f"Welcome {name}! Let's get ready to play hangman :)")
     
+    # Choose a random word
     word = choose_word(words)
-    # keeping track of whats already been guessed in the word
-    word_letters = set(word) 
-    alphabet = set(string.ascii_uppercase)
-    # what the user guesses
-    letters_guessed = set() 
+
+    # Initialise lists to store guessed letters and incorrect guesses
+    guessed_letters = []
+    incorrect_guesses = []
+
+    # Initialise game state variables
+    game_over = False
+
     # Defaulting lives to 8 for now just for testing
     lives = 8 
-    
+
+    # Main game loop
+    while not game_over:
+        # Display the current hangman state and the word with guessed letters
+        print(display_hangman(lives))
+        print(display_word(word, guessed_letters, incorrect_guesses))
+
+        # Prompt the user to guess a letter
+        guess = input("Guess a letter: ").upper()
+        
+        # Validate the user's input
+        if len(guess) != 1 or not guess.isalpha():
+            print("Please enter a single alphabetical character.")
+            continue
+
+        # Check if the guessed letter has already been guessed
+        if guess in guessed_letters:
+            print("You already guessed this letter.")
+            continue
+
+        # Check if the guessed letter is in the word
+        if guess in word:
+            guessed_letters.append(guess)
+            if ''.join(guessed_letters) == word:
+                print(display_hangman(lives))
+                print(display_word(word, guessed_letters, incorrect_guesses)) 
+                print("Congratulations. You've guessed the word correctly!")
+                game_over = True
+
+        else:
+            # If the guessed letter is not in the word, add it to incorrect guesses
+            incorrect_guesses.append(guess)
+            lives -= 1
+            print(f"You have {lives} lives remaining.")
+            # Check if the player has run out of lives
+            if lives == 0:
+                print("You're out of lives! The word was: ", word)
+                game_over = True
+
+    # Ask if the user wants to play again
+    play_again = input("Do you want to play again? (Yes/No): ").upper()
+    if play_again == "yes":
+        hangman()
+    else:
+        print("Thanks for playing hangman, hope you enjoyed :)")   
+
+# Start the game
+hangman()

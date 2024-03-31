@@ -110,6 +110,23 @@ def hangman():
     # Ask the user to enter their name
     name = input("Enter your name: ")
     print(f"Welcome {name}! Let's get ready to play hangman :)")
+
+    # Difficulty selection
+    print("Choose your difficulty!")
+    print("Enter e for Easy, this will give you 8 lives")
+    print("Enter m for Medium, this will give you 6 lives")
+    print("Enter h for Hard, this will give you 4 lives")
+
+    difficulty = input("Enter your choice (e/m/h): ").lower()
+    if difficulty == "e":
+        lives = 8
+    elif difficulty == "m":
+        lives = 6
+    elif difficulty == "h":
+        lives = 4
+    else:
+        print("Invalid input. Defaulting to easy")
+        lives = 8
     
     # Choose a random word
     word = choose_word(words)
@@ -120,9 +137,6 @@ def hangman():
 
     # Initialise game state variables
     game_over = False
-
-    # Defaulting lives to 8 for now just for testing
-    lives = 8 
 
     # Main game loop
     while not game_over:

@@ -42,7 +42,7 @@ class colors:
 
 
 # Function that get's player name
-def user_name():
+def ask_player_name():
     """
     Asks player to enter their name. 
     """
@@ -181,7 +181,7 @@ def hangman():
 
     hangman_logo()
     user_welcome()
-    user_name()
+    ask_player_name()
 
     # Difficulty selection
     print("Choose your difficulty!\n")

@@ -4,23 +4,41 @@ import random
 from words import words
 from time import sleep
 
-# colors, credit geeksforgeeks.com
+
 class colors:
-    black = '\033[30m\033[0m'
-    red = '\033[31m\033[0m'
-    green = '\033[32m\033[0m'
-    orange = '\033[33m\033[0m'
-    blue = '\033[34m\033[0m'
-    purple = '\033[35m\033[0m'
-    cyan = '\033[36m\033[0m'
-    lightgrey = '\033[37m\033[0m'
-    darkgrey = '\033[90m\033[0m'
-    lightred = '\033[91m\033[0m'
-    lightgreen = '\033[92m\033[0m'
-    yellow = '\033[93m\033[0m'
-    lightblue = '\033[94m\033[0m'
-    pink = '\033[95m\033[0m'
-    lightcyan = '\033[96m\033[0m'
+
+    '''
+    Colors class:reset all colors with colors.reset; two
+    sub classes fg for foreground
+    and bg for background; use as colors.subclass.colorname.
+    i.e. colors.fg.red or colors.bg.greenalso, the generic bold, disable,
+    underline, reverse, strike through,
+    and invisible work with the main class i.e. colors.bold
+    '''
+    reset = '\033[0m'
+    bold = '\033[01m'
+    disable = '\033[02m'
+    underline = '\033[04m'
+    reverse = '\033[07m'
+    strikethrough = '\033[09m'
+    invisible = '\033[08m'
+    
+    class fg:
+        black = '\033[30m'
+        red = '\033[31m'
+        green = '\033[32m'
+        orange = '\033[33m'
+        blue = '\033[34m'
+        purple = '\033[35m'
+        cyan = '\033[36m'
+        lightgrey = '\033[37m'
+        darkgrey = '\033[90m'
+        lightred = '\033[91m'
+        lightgreen = '\033[92m'
+        yellow = '\033[93m'
+        lightblue = '\033[94m'
+        pink = '\033[95m'
+        lightcyan = '\033[96m'
 
 
 # Function that get's player name
@@ -35,7 +53,8 @@ def user_name():
             break
         print("Please insert only valid letters (A-Z).")
     sleep(1)
-    print("\nGoodluck, " + colors.lightcyan + f"{name.capitalize()}!")
+    print("\nGoodluck, " + colors.fg.cyan + f"{name.capitalize()}" + colors.reset + "!")
+
 
 # Function to choose a random word from the words.py list
 

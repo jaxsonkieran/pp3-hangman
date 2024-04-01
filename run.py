@@ -4,7 +4,7 @@ import random
 from words import words
 from time import sleep
 
-
+# Add colors to the program, with help form geeksforgeeks.com for import
 class colors:
 
     '''
@@ -57,7 +57,6 @@ def user_name():
 
 
 # Function to choose a random word from the words.py list
-
 # This function was really helped by the json file from Kylie Ying in her YT tutorial
 def choose_word(words):
     """

@@ -163,7 +163,18 @@ def check_guess_word(word, guessed_word):
         return False
 
 
-
+# Function to get difficulty from the user input
+def get_difficulty():
+    """
+    Prompt the user to enter the difficulty level.
+    Validate the input and return difficulty level.
+    """
+    while True:
+        difficulty = input("Enter your choice (e/m/h): ").strip().lower()
+        if difficulty in ['e', 'm', 'h']:
+            return difficulty
+        else:
+            print("Invalid input. Please enter 'e' for Easy, 'm' for Medium, or 'h' for Hard.")
 
 # Function to play the hangman game
 def hangman():
@@ -178,7 +189,7 @@ def hangman():
     print(colors.fg.orange + "- Enter m for Medium, this will give you 6 lives" + colors.reset)
     print(colors.fg.red + "- Enter h for Hard, this will give you 4 lives" + colors.reset)
 
-    difficulty = input("Enter your choice (e/m/h): ").lower()
+    difficulty = get_difficulty()
     if difficulty == "e":
         lives = 8
     elif difficulty == "m":

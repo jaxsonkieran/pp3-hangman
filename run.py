@@ -51,7 +51,7 @@ def user_name():
         name = input("\n Enter your player name: ")
         if name.isalpha():
             break
-        print("Please insert only valid letters (A-Z).")
+        print(colors.fg.red + "Please insert only valid letters (A-Z)." + colors.reset)
     sleep(1)
     print("\nGoodluck, " + colors.fg.cyan + f"{name.capitalize()}" + colors.reset + "!")
 
@@ -175,9 +175,9 @@ def hangman():
 
     # Difficulty selection
     print("Choose your difficulty!\n")
-    print("- Enter e for Easy, this will give you 8 lives")
-    print("- Enter m for Medium, this will give you 6 lives")
-    print("- Enter h for Hard, this will give you 4 lives")
+    print(colors.fg.green + "- Enter e for Easy, this will give you 8 lives" + colors.reset)
+    print(colors.fg.orange + "- Enter m for Medium, this will give you 6 lives" + colors.reset)
+    print(colors.fg.red + "- Enter h for Hard, this will give you 4 lives" + colors.reset)
 
     difficulty = input("Enter your choice (e/m/h): ").lower()
     if difficulty == "e":
@@ -211,7 +211,7 @@ def hangman():
         
         # Validate the user's input
         if len(guess) != 1 or not guess.isalpha():
-            print("Please enter a single alphabetical character.")
+            print(colors.fg.red + "Please enter a single alphabetical character." + colors.reset)
             continue
 
         # Check if the guessed letter has already been guessed
@@ -225,17 +225,17 @@ def hangman():
             if all(letter in guessed_letters for letter in word):
                 print(display_hangman(lives))
                 print(display_word(word, guessed_letters, incorrect_guesses)) 
-                print(f"Congratulations {name.capitalize()}!. You've guessed the word correctly!")
+                print(colors.fg.green + f"Congratulations {name.capitalize()}!. You've guessed the word correctly!" + colors.reset)
                 game_over = True
 
         else:
             # If the guessed letter is not in the word, add it to incorrect guesses
             incorrect_guesses.append(guess)
             lives -= 1
-            print(f"You have {lives} lives remaining.")
+            print(colors.fg.yellow + f"You have {lives} lives remaining." + colors.reset)
             # Check if the player has run out of lives
             if lives == 0:
-                print(f"You're out of lives, {name.capitalize()}!")
+                print(colors.fg.red + "You're out of lives, " + f"{name.capitalize()}" + "!" + colors.reset)
                 print("The word was, ", word)
                 game_over = True
 
@@ -253,7 +253,7 @@ The word 'hangman' is printed to the terminal, like a logo
 in colors before the game begins.
 """
 def hangman_logo():
-    print(r""" 
+    print(colors.fg.purple + r""" 
  _                                             
 | |                                            
 | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
@@ -262,7 +262,7 @@ def hangman_logo():
 |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                     __/ |                      
                    |___/ 
-""")
+""" + colors.reset)
 
 # Welcome output for user
 def user_welcome():

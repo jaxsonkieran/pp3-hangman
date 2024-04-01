@@ -132,6 +132,7 @@ def check_guess_word(word, guessed_word):
 # Function to play the hangman game
 def hangman():
 
+    hangman_logo()
     user_welcome()
     user_name()
 
@@ -209,6 +210,24 @@ def hangman():
         print("Thanks for playing hangman, hope you enjoyed :)")   
 
 
+# Hangman logo
+"""
+The word 'hangman' is printed to the terminal, like a logo
+in colors before the game begins.
+"""
+def hangman_logo():
+    print(r""" 
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/ 
+""")
+
+# Welcome output for user
 def user_welcome():
     """
     WElcome user to the game

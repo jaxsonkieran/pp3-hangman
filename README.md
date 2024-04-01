@@ -25,6 +25,13 @@ The player keeps guessing until completing the word. For winning the game, the u
 
 The user can choose to play again or exit.
 
+# Features
 
+# Testing
+* Tested for various bugs and functionality but inputting incorrect data, etc.
+* Tested for scenarios with successful guesses (valid letters only)
+* This game was tested using Firefox, Google Chrome and Internet Explorer.
+
+# PEP8
 
 

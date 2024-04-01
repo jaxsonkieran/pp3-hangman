@@ -1,11 +1,14 @@
-# Welcome to hangman. All code plus resources used in this project will be credited in the README file. 
+# Welcome to hangman. All code plus resources used in this project will be credited in the README file.
 
 import random
 from words import words
 from time import sleep
 
 # Add colors to the program, with help form geeksforgeeks.com for import
+
+
 class colors:
+
 
     '''
     Colors class:reset all colors with colors.reset; two

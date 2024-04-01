@@ -4,6 +4,24 @@ import random
 from words import words
 from time import sleep
 
+# colors, credit geeksforgeeks.com
+class colors:
+    black = '\033[30m\033[0m'
+    red = '\033[31m\033[0m'
+    green = '\033[32m\033[0m'
+    orange = '\033[33m\033[0m'
+    blue = '\033[34m\033[0m'
+    purple = '\033[35m\033[0m'
+    cyan = '\033[36m\033[0m'
+    lightgrey = '\033[37m\033[0m'
+    darkgrey = '\033[90m\033[0m'
+    lightred = '\033[91m\033[0m'
+    lightgreen = '\033[92m\033[0m'
+    yellow = '\033[93m\033[0m'
+    lightblue = '\033[94m\033[0m'
+    pink = '\033[95m\033[0m'
+    lightcyan = '\033[96m\033[0m'
+
 
 # Function that get's player name
 def user_name():
@@ -17,7 +35,7 @@ def user_name():
             break
         print("Please insert only valid letters (A-Z).")
     sleep(1)
-    print("\nGoodluck, " + f"{name.capitalize()}!")
+    print("\nGoodluck, " + colors.lightcyan + f"{name.capitalize()}!")
 
 # Function to choose a random word from the words.py list
 

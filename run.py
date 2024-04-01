@@ -183,6 +183,7 @@ def hangman():
     user_welcome()
     ask_player_name()
 
+
     # Difficulty selection
     print("Choose your difficulty!\n")
     print(colors.fg.green + "- Enter e for Easy, this will give you 8 lives" + colors.reset)

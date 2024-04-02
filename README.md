@@ -2,6 +2,16 @@
 Welcome to my interactive Hangman game built using python. 
 
 # Table of Contents
+* [Project Overview](#project-overview)
+* [Game Flowchart](#game-flowchart)
+* [How To Play](#how-to-play)
+* [Features](#features)
+* [Testing](#testing)
+* [CI Python Linter](#pep8-validator-code-institute)
+* [Bugs](#bugs)
+* [Improvements](#improvement)
+* [Deployment](#deployment-to-heroku)
+* [Credits](#credits)
 
 # Project Overview
 This project is based on the game Hangman. Playing this game, the user must guess the full word before the hangman is hung (drawn). This is done by guessing each letter in the word. 
@@ -52,7 +62,6 @@ Some colors were included for aesthetic puposes and as a way to guide the player
 * After, the player is always asked if they want to play again.
 
 
-
 # Testing
 * Tested for various bugs and functionality but inputting incorrect data, etc.
 * Tested for scenarios with successful guesses (valid letters only)
@@ -80,12 +89,24 @@ Some colors were included for aesthetic puposes and as a way to guide the player
 # Deployment to Heroku
 This project was deployed on Heroku in the following way:
 
-* Fork or clone this repository.
-* Create a new Heroku app using a different name
-* Add a config var with key PORT and value 8000
-* Set the buildbacks to Python and NodeJS in that order
-* Link the Heroku app to the repo
-* Click Deploy
+1. Fork or clone this repository.
+2. Create a new Heroku app using a different name.
+3. Go to 'Deploy' Tab.
+<img src="assets/deploy_tab.JPG">
+4. Choose Connect to GitHub account.
+5. Search for the repo you want to deploy. The name must match the name on github.
+<img src="assets/connect_github.JPG">
+6. Click 'Connect'.
+7. Select automatic or manual deployment.
+8. Choose which branch.
+<img src="assets/deploy_branch.JPG">
+9. Click deploy.
+10. When deployment is finished, go to settings to configure vars and buildpacks.
+11. 'Reveal config vars, we need to add PORT as the key, and 8000 as the value.
+<img src="assets/config_Vars.JPG">
+12. Add buildpacks python and node.js, ensure they are in that order.
+<img src="assets/buildpacks.JPG">
+13. Ensure you now redploy before opening! 
 
 # Credits
 There were two main tutorials that really really helped me with this project, that was [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w) and [Kylie Ying](https://www.youtube.com/watch?v=cJJTnI22IF8)

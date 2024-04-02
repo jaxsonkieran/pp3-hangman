@@ -26,6 +26,32 @@ The player keeps guessing until completing the word. For winning the game, the u
 The user can choose to play again or exit.
 
 # Features
+Some colors were included for aesthetic puposes and as a way to guide the player, like the easy level is green, medium is orange, and hard is red. Also, when the user enters their name (cyan), when they lose (red), and when they win (green).
+
+* Welcome / beginning, the player is greeted with the below and instructions. 
+<img src="assets/welcome_hg.JPG">
+
+* The player then chooses their difficulty and the number of lives is reflected.
+<img src="assets/player_name_choice.JPG">
+
+* A random word is generated for the player to guess from our list. The word is shown blank with underlines symbolising the letter. 
+<img src="assets/guess_letter.JPG">
+
+* When the players makes a guess that is incorrect, it is added to the incorrect guesses list and a life is lost, the hangman starts to build.
+<img src="assets/incorrect_g.JPG">
+
+* When the player gets a guess right, it is added to the space where the letter is.
+<img src="assets/correct_g.JPG">
+
+* When the player loses, and it is over, they are told the word, it is also colored in red.
+<img src="assets/incorrect_guess.JPG">
+
+* When the player wins, they are congratulated and it is in green. (The word was removed on final edit as this didn't make sense since they would know the word if they won!)
+<img src="assets/correct_guess.JPG">
+
+* After, the player is always asked if they want to play again.
+
+
 
 # Testing
 * Tested for various bugs and functionality but inputting incorrect data, etc.

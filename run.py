@@ -257,7 +257,7 @@ def hangman():
             # Check if the player has run out of lives
             if lives == 0:
                 print(colors.fg.red + "You're out of lives, " + f"{name.capitalize()}" + "!" + colors.reset)
-                print("The word was, ", word)
+                print("The word was, " + colors.fg.red + f"{word}" + colors.reset)
                 game_over = True
 
     # Ask if the user wants to play again

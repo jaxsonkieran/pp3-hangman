@@ -61,6 +61,13 @@ Some colors were included for aesthetic puposes and as a way to guide the player
 
 * After, the player is always asked if they want to play again.
 
+* For users already guessing a letter, it looks like this,
+<img src="assets/already_guessed.JPG">
+
+* Invalid input is also handled like so,
+<img src="assets/invalid_input.JPG">
+
+
 
 # Testing
 * Tested for various bugs and functionality but inputting incorrect data, etc.

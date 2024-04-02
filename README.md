@@ -72,4 +72,30 @@ Some colors were included for aesthetic puposes and as a way to guide the player
 5. Finally, when using the CI python linter to validate my code, I may have copied in my hangman function incorrectly and it threw my while loop indentation out of whack. This threw me a lot as the game would suddenly end after 1, or 2 or 3 guesses if I still had lives left. But thankfully I could see the indentation problem after some help from a friend. 
 
 
+# Improvement
+* Level of difficulty could be word length based. 
+* You could have a level where there is some help involved, e.g. a certain letter is inserted at the beginning to help you.
+* Similarly to the above, code could be written to give a user on their last life a helpline, do they want a hint?
+
+# Deployment to Heroku
+This project was deployed on Heroku in the following way:
+
+* Fork or clone this repository.
+* Create a new Heroku app using a different name
+* Add a config var with key PORT and value 8000
+* Set the buildbacks to Python and NodeJS in that order
+* Link the Heroku app to the repo
+* Click Deploy
+
+# Credits
+There were two main tutorials that really really helped me with this project, that was [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w) and [Kylie Ying](https://www.youtube.com/watch?v=cJJTnI22IF8)
+
+Before coming to Code Institute, I actually started with Harvards free CS50 Intro to Python course so the code came back to me while writing this project.
+
+* [GeeksForGeeks](https://www.geeksforgeeks.org/) Used for some methods and fact checking. It was also how I fixed my color bug.
+
+* Code Institute Slack Channel and Members were also super helpful in getting me to here!
+
+* StackOverflow
+* [Lucid - FlowChart](https://www.lucidchart.com/pages/landing/process-map-software?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier1_mixed_search_brand_phrase_&km_CPC_CampaignId=1490375424&km_CPC_AdGroupID=55688905897&km_CPC_Keyword=%2Blucid%20chart%20%2Bprocess%20%2Bmap&km_CPC_MatchType=b&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433234840&km_CPC_TargetID=kwd-467205741059&km_CPC_Country=1007848&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gad_source=1&gclid=Cj0KCQjw2a6wBhCVARIsABPeH1sAjmN0qH0EwuViqQ_ssmL6wAxvjYoCcutnEAWXHUxr-ho-rO1cc9EaAq2DEALw_wcB)
 

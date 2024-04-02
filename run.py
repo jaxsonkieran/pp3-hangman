@@ -1,4 +1,4 @@
-# Welcome to hangman. All code plus resources used in this project will be credited in the README file.
+# Hangman: All code & resources used will be credited in the README.
 
 import random
 from words import words
@@ -8,8 +8,6 @@ from time import sleep
 
 
 class colors:
-
-
     '''
     Colors class:reset all colors with colors.reset; two
     sub classes fg for foreground
@@ -45,9 +43,11 @@ class colors:
 
 
 # Function that get's player name
+
+
 def ask_player_name():
     """
-    Asks player to enter their name. 
+    Asks player to enter their name.
     """
     global name
     while True:
@@ -60,7 +60,7 @@ def ask_player_name():
 
 
 # Function to choose a random word from the words.py list
-# This function was really helped by the json file from Kylie Ying in her YT tutorial
+
 def choose_word(words):
     """
     Choose a random word from the 'words.py' file
@@ -73,6 +73,7 @@ def choose_word(words):
     return word
 
 # Function to display the hangman
+
 def display_hangman(lives):
     stages = [  
                 '''
@@ -139,14 +140,15 @@ def display_hangman(lives):
                    -
                 '''
     ]
-    if lives < len(stages):
+    if lives < len(stages) - 1:
         return stages[lives]
     else:
         return stages[-1]  # Return the last stage if lives exceed the length of stages
 
-# Function to check if the guessed letter is in the word
 
 # Function to display the word with blanks and guessed letters
+
+
 def display_word(word, guessed_letters, incorrect_guesses):
     displayed_word = ""
     for letter in word:
@@ -154,11 +156,12 @@ def display_word(word, guessed_letters, incorrect_guesses):
             displayed_word += letter
         else:
             displayed_word += "_ "
-    
     displayed_word += "\nIncorrect guesses: " + ", ".join(incorrect_guesses)
     return displayed_word
 
 # Function to check if the guessed word matches the chosen word
+
+
 def check_guess_word(word, guessed_word):
     if guessed_word == word:
         return True
@@ -167,6 +170,8 @@ def check_guess_word(word, guessed_word):
 
 
 # Function to get difficulty from the user input
+
+
 def get_difficulty():
     """
     Prompt the user to enter the difficulty level.
@@ -177,21 +182,24 @@ def get_difficulty():
         if difficulty in ['e', 'm', 'h']:
             return difficulty
         else:
-            print("Invalid input. Please enter 'e' for Easy, 'm' for Medium, or 'h' for Hard.")
+            print("Invalid input. Enter 'e' Easy, 'm' Medium, or 'h' Hard.")
 
-# Function to play the hangman game
+# Main Game Function
+
+
 def hangman():
-
+    """
+    Hangman Game function, to play game.
+    """
     hangman_logo()
     user_welcome()
     ask_player_name()
 
-
     # Difficulty selection
     print("Choose your difficulty!\n")
-    print(colors.fg.green + "- Enter e for Easy, this will give you 8 lives" + colors.reset)
-    print(colors.fg.orange + "- Enter m for Medium, this will give you 6 lives" + colors.reset)
-    print(colors.fg.red + "- Enter h for Hard, this will give you 4 lives" + colors.reset)
+    print(colors.fg.green + "- Enter e: Easy, this will give you 8 lives" + colors.reset)
+    print(colors.fg.orange + "- Enter m: Medium, this will give you 6 lives" + colors.reset)
+    print(colors.fg.red + "- Enter h: Hard, this will give you 4 lives" + colors.reset)
 
     difficulty = get_difficulty()
     if difficulty == "e":
@@ -203,7 +211,7 @@ def hangman():
     else:
         print("Invalid input. Defaulting to easy")
         lives = 8
-    
+
     # Choose a random word
     word = choose_word(words)
 
@@ -222,10 +230,10 @@ def hangman():
 
         # Prompt the user to guess a letter
         guess = input("Guess a letter: ").lower()
-        
+
         # Validate the user's input
         if len(guess) != 1 or not guess.isalpha():
-            print(colors.fg.red + "Please enter a single alphabetical character." + colors.reset)
+            print(colors.fg.red + "Please enter a single (A-Z) character." + colors.reset)
             continue
 
         # Check if the guessed letter has already been guessed
@@ -238,10 +246,9 @@ def hangman():
             guessed_letters.append(guess)
             if all(letter in guessed_letters for letter in word):
                 print(display_hangman(lives))
-                print(display_word(word, guessed_letters, incorrect_guesses)) 
+                print(display_word(word, guessed_letters, incorrect_guesses))
                 print(colors.fg.green + f"Congratulations {name.capitalize()}!. You've guessed the word correctly!" + colors.reset)
                 game_over = True
-
         else:
             # If the guessed letter is not in the word, add it to incorrect guesses
             incorrect_guesses.append(guess)
@@ -258,14 +265,15 @@ def hangman():
     if play_again == "yes":
         hangman()
     else:
-        print("Thanks for playing hangman, hope you enjoyed :)")   
-
+        print("Thanks for playing hangman, hope you enjoyed :)")
 
 # Hangman logo
 """
 The word 'hangman' is printed to the terminal, like a logo
 in colors before the game begins.
 """
+
+
 def hangman_logo():
     print(colors.fg.purple + r""" 
  _                                             
@@ -279,6 +287,8 @@ def hangman_logo():
 """ + colors.reset)
 
 # Welcome output for user
+
+
 def user_welcome():
     """
     WElcome user to the game
@@ -289,7 +299,7 @@ def user_welcome():
     sleep(1)
     print("Try to guess the random word before you get hung\n")
     sleep(1)
-    print("Follow the instructions below to choose a level: Easy, Medium, Hard.\n")
+    print("Follow the instructions to choose a level: Easy, Medium, Hard.\n")
     sleep(1)
     print("----------------------------------------")
     sleep(1)

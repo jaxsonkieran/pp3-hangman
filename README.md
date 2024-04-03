@@ -1,5 +1,5 @@
 # Hangman 
-Welcome to my interactive Hangman game built using python. 
+Welcome to my interactive Hangman game built using python. Play the game [here](https://hangman-kj-8c5e1dbbf557.herokuapp.com/)
 
 # Table of Contents
 * [Project Overview](#project-overview)

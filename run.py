@@ -60,7 +60,7 @@ def ask_player_name():
 
 
 # Function to choose a random word from the words.py list
-
+# Function helped by Kylie Ying, credited in README
 def choose_word(words):
     """
     Choose a random word from the 'words.py' file

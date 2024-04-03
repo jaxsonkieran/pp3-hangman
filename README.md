@@ -125,6 +125,8 @@ This project was deployed on Heroku in the following way:
 # Credits
 There were two main tutorials that really really helped me with this project, that was [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w) and [Kylie Ying](https://www.youtube.com/watch?v=cJJTnI22IF8)
 
+I got the Hangman ASCII art structure from [here](https://ascii.co.uk/art/hangman)
+
 Before coming to Code Institute, I actually started with Harvards free CS50 Intro to Python course so the code came back to me while writing this project.
 
 * [GeeksForGeeks](https://www.geeksforgeeks.org/) Used for some methods and fact checking. It was also how I fixed my color bug.

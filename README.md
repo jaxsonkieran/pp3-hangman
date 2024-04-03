@@ -78,6 +78,7 @@ Some colors were included for aesthetic puposes and as a way to guide the player
 * I used Code Institutes Python Linter. Which can be found [here](https://pep8ci.herokuapp.com/#) to validate my python code.
 * All errors and warnings were fixed, bar the warrings for my Hangman logo and the hangman drawing itself (clearing whitespace). This would of affected the look and functionality of the game so I chose to ignore these errors. 
 <img src="assets/pep8_ci.JPG">
+
 * Other errors such as not leaving to blank lines between the comment and the function, or indentations, or some issues with lines over 79 characters long were fixed.
 
 # Bugs
@@ -100,19 +101,25 @@ This project was deployed on Heroku in the following way:
 2. Create a new Heroku app using a different name.
 3. Go to 'Deploy' Tab.
 <img src="assets/deploy_tab.JPG">
+
 4. Choose Connect to GitHub account.
+
 5. Search for the repo you want to deploy. The name must match the name on github.
 <img src="assets/connect_github.JPG">
+
 6. Click 'Connect'.
 7. Select automatic or manual deployment.
 8. Choose which branch.
 <img src="assets/deploy_branch.JPG">
+
 9. Click deploy.
 10. When deployment is finished, go to settings to configure vars and buildpacks.
 11. 'Reveal config vars, we need to add PORT as the key, and 8000 as the value.
 <img src="assets/config_Vars.JPG">
+
 12. Add buildpacks python and node.js, ensure they are in that order.
 <img src="assets/buildpacks.JPG">
+
 13. Ensure you now redploy before opening! 
 
 # Credits

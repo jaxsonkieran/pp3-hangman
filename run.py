@@ -249,6 +249,9 @@ def hangman():
                 print(display_word(word, guessed_letters, incorrect_guesses))
                 print(colors.fg.green + f"Congratulations {name.capitalize()}!. You've guessed the word correctly!" + colors.reset)
                 game_over = True
+            else:
+                print(colors.fg.yellow + f"You have {lives} lives remaining." + colors.reset)
+                
         else:
             # If the guessed letter is not in the word, add it to incorrect guesses
             incorrect_guesses.append(guess)
